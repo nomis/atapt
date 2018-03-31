@@ -468,7 +468,6 @@ class atapt:
         return buf
 
     def readSmart(self):
-        buf = ctypes.c_buffer(512)
         buf = self.readSmartValues()
         self.selftestStatus = int.from_bytes(buf[363], byteorder='little')
         self.smart = {}
@@ -638,7 +637,6 @@ class atapt:
         self.checkSense()
 
     def getSelftestLog(self):
-        buf = ctypes.c_buffer(512)
         buf = self.readSmartLog(6)
         log = []
         revision = int.from_bytes(buf[0] + buf[1], byteorder='little')
