@@ -178,7 +178,7 @@ class atapt:
         self.smart = {}
         self.ssd = 0
         self.duration = 0
-        self.timeout = 1000  # in milliseconds
+        self.timeout = 10000  # in milliseconds
         self.readCommand = ATA_READ_SECTORS
         self.verifyCommand = ATA_READ_VERIFY_SECTORS
         self.writeCommand = ATA_WRITE_SECTORS
