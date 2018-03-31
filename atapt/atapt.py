@@ -69,7 +69,6 @@ class sgioHdr(ctypes.Structure):
     """
     This structure descibed in scsi/sg.h
     """
-    _pack_ = 1
     _fields_ = [
         ('interface_id', ctypes.c_int),
         ('dxfer_direction', ctypes.c_int),
