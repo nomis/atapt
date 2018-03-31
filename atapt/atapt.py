@@ -264,7 +264,7 @@ class atapt:
     def doSgio(self):
         fd = os.open(self.dev, os.O_RDONLY | os.O_NONBLOCK)
         startTime = time.time()
-        io_result = libc.ioctl(fd, SG_IO, ctypes.c_uint64(ctypes.addressof(self.sgio)))
+        io_result = libc.ioctl(fd, SG_IO, ctypes.byref(self.sgio))
         os.close(fd)
         if io_result != 0:
             raise sgioFalied("fcntl.ioctl falied")
