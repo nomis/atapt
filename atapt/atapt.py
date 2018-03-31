@@ -263,7 +263,7 @@ class atapt:
                        resid=0, duration=0, info=0)
 
     def doSgio(self):
-        fd = os.open(self.dev, os.O_RDWR)
+        fd = os.open(self.dev, os.O_RDONLY | os.O_NONBLOCK)
         startTime = time.time()
         io_result = libc.ioctl(fd, SG_IO, ctypes.c_uint64(ctypes.addressof(self.sgio)))
         os.close(fd)
